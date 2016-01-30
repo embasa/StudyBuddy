@@ -43,7 +43,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] !='admin':
             error = 'Invalid Credentials. Please try again.'
         else:
-            return redirect(url_for('landing'),myName='randomness')
+            return redirect(url_for('landing',name='randomness'))
     return render_template("login3.html", error=error)
 
 @app.route('/register')
