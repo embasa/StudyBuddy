@@ -12,18 +12,29 @@ class Logins(db.Model):
         username = 'username: %r >' % (self.username)
         return email + ' ' + pwhash + ' ' + username
 
-class Sessions(db.Model):
+class Listings(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(60), index=True, unique=True)
     location = db.Column(db.String(60), index=True, unique=True)
-    section = db.Column(db.String(20), index=True, unique=True)
-    start_time = db.Column(db.String(10), index=True, unique=True)
-    stop_time = db.Column(db.String(10), index=True, unique=True)
-    subject = db.Column(db.String(20), index=True, unique=True)
-    title = db.Column(db.String(20), index=True, unique=True)
+    section = db.Column(db.String(60), index=True, unique=True)
+    start_time = db.Column(db.String(60), index=True, unique=True)
+    stop_time = db.Column(db.String(60), index=True, unique=True)
+    subject = db.Column(db.String(60), index=True, unique=True)
+    title = db.Column(db.String(60), index=True, unique=True)
 
     def __repr__(self):
-        return '<Title: %r>' % (self.title)
+        description = '<Description: %r>' % (self.description)
+        location = '<Location: %r>' % (self.location)
+        section = '<Section: %r>' % (self.section)
+        start_time = '<Start Time: %r>' % (self.start_time)
+        stop_time = '<Stop Time: %r>' % (self.stop_time)
+        subject = '<Subject: %r>' % (self.subject)
+        title = '<Title: %r>' % (self.title)
+        return (title + ' ' + location + '\n'
+                + subject + ' ' + section + '\n'
+                + start_time + ' ' + stop_time + '\n'
+                + description)
+               
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
