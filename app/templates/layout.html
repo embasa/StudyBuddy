@@ -2,22 +2,28 @@
 <title>Study Buddy</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styleLayout.css') }}">
 <div class=page>
-    <div id="menuHeader">
-      <img src="../static/images/calc_pic.jpg" alt="yo"/>  
+<div class="wrapper" id="menuHeader">
+  <header>
+  <img src="../static/images/calc_pic.jpg" alt="yo"/>  
   <h1 id="sbheader">StudyBuddy</h1>
-  </div>
-  <div class=metanav id="nav">
+  <nav id="menu">
     {% if not session.logged_in %}
         <a href="{{ url_for('register') }}">Register</a>
-        <a href="{{ url_for('login') }}">Log in</a>
+        <a href="{{ url_for('login') }}">Log In</a>
         <a href="/index">Index</a>
         <a href="landing">Home</a>
-        <a href="profile">Profile</a></li>    
-        <a href="/inbox"> Messages</a></li>
+        <a href="profile">Profile</a>    
+        <a href="/inbox"> Messages</a>
     {% else %}
-        <a href="{{ url_for('logout') }}">log out</a>
+	 <a href="/index">Index</a>
+        <a href="landing">Home</a>
+        <a href="profile">Profile</a>
+        <a href="/inbox"> Messages</a>
+        <a href="{{ url_for('logout') }}">Log Out</a>
     {% endif %}
-  </div>
+  </nav>
+  </header>
+</div>
   {% for message in get_flashed_messages() %}
     <div class=flash>{{ message }} id="error"</div>
   {% endfor %}
