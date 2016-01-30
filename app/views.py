@@ -31,7 +31,7 @@ def index():
 
 @app.route('/landing')
 def landing():
-    return render_template("landing.html")
+    return render_template("landing.html",name='placeholderName')
 
 @app.route('/login2')
 def login2():
@@ -44,7 +44,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] !='admin':
             error = 'Invalid Credentials. Please try again.'
         else:
-            return redirect(url_for('landing'))
+            return redirect(url_for('landing',myName='whatever'))
     return render_template("login3.html", error=error)
 
 @app.route('/register')
@@ -57,4 +57,5 @@ def profile():
 
 @app.route('/c/<username>')
 def chicken(username):
+
     return 'User %s' % username
