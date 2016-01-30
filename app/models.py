@@ -12,6 +12,11 @@ class Logins(db.Model):
         username = 'username: %r >' % (self.username)
         return email + ' ' + pwhash + ' ' + username
 
+class Sessions(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(60), index=True, unique=True)
+    subject = db.Column(db.String(20), 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
