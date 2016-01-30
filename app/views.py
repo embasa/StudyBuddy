@@ -44,7 +44,11 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] !='admin':
             error = 'Invalid Credentials. Please try again.'
         else:
+<<<<<<< HEAD
+            return redirect(url_for('home'))
+=======
             return redirect(url_for('landing'))
+>>>>>>> f361ab829e573c7f5b86163e5cec617b8b3077f8
     return render_template("login3.html", error=error)
 
 @app.route('/register')
@@ -54,3 +58,7 @@ def register():
 @app.route('/profile')
 def profile():
     return render_template("profile.html")
+
+@app.route('/c/<username>')
+def chicken(username):
+    return 'User %s' % username
