@@ -18,7 +18,7 @@ class Sessions(db.Model):
     location = db.Column(db.String(60), index=True, unique=True)
     section = db.Column(db.String(20), index=True, unique=True)
     start_time = db.Column(db.String(10), index=True, unique=True)
-    stop_time = db.Column(db.String(10), index=True, unqiue=True)
+    stop_time = db.Column(db.String(10), index=True, unique=True)
     subject = db.Column(db.String(20), index=True, unique=True)
     title = db.Column(db.String(20), index=True, unique=True)
 
