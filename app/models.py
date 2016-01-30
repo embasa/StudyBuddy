@@ -10,7 +10,7 @@ class Logins(db.Model):
         email = '<email: %r >' % (self.email)
         pwhash = 'pwhash: %r >' % (self.pwhash)
         username = 'username: %r >' % (self.username)
-        return email + " " + pwhash + " " + username
+        return email + ' ' + pwhash + ' ' + username
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
