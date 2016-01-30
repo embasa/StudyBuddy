@@ -1,6 +1,5 @@
-/* CSS Document */
 body{
-	background:url(images/bg.gif) repeat-x 0 0 #F7F7F7; color:#171717;
+	background:url(images/bg.gif) repeat-x 0 0 #F7F7F7; color:##F7F7F7;
 	font:normal 13px/20px Georgia, "Times New Roman", Times, serif;
 	margin:0; padding:0;}
 div, h1, h2, h3, h4, h5, h6, form, label, input, span, ul, li, p, a{
@@ -11,56 +10,52 @@ ul{
 	font-size:0; line-height:0; clear:both;}
 
 
-/* -- top navigation start -- */
-#topNav{
+topNav{
 	width:683px; margin:0 auto; height:37px;}
-#topNav ul{
+topNav ul{
 	width:540px; margin:0 auto;}
-#topNav ul li{
+topNav ul li{
 	height:37px; float:left;
 	background:url(images/bg.gif) repeat-x 0 0 #292929; color:#C1C1C1;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
-#topNav ul li a{
+topNav ul li a{
 	padding:0 18px; height:37px; float:left; text-decoration:none; display:block;
 	background:url(images/bg.gif) repeat-x 0 0 #292929; color:#C1C1C1;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
-#topNav ul li a:hover{
+topNav ul li a:hover{
 	background:url(images/top_btn_h.gif) no-repeat center bottom;}
-#topNav ul li a.hover{
+topNav ul li a.hover{
 	padding:0 18px; height:37px; float:left; text-decoration:none; display:block;
 	background:url(images/top_btn_h.gif) no-repeat center bottom; color:#C1C1C1;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
-/* -- top navigation start -- */
-
-/* -- body start -- */
-#body{
+body{
 	width:683px; margin:0 auto; padding:0 0 60px 0;
 	background:url(images/header_bg.gif) no-repeat right top #F7F7F7; color:#171717;}
-#body img.logo{
+body img.logo{
 	border:none; margin:30px 0 0 0;}
-#body h1{
+body h1{
 	background:url(images/punch_line.gif) no-repeat 0 0 #F7F7F7; color:#171717;
 	width:142px; height:49px; text-indent:-20000px;}
-#body div.bodyText{
+body div.bodyText{
 	padding:50px 0 0 0;}
-#body div.bodyText h2{
+body div.bodyText h2{
 	font:bold italic 24px/34px Georgia, "Times New Roman", Times, serif; color:#B10000;}
-#body div.bodyText h2 span{
+body div.bodyText h2 span{
 	color:#000000; background-color:#F7F7F7;}
-#body div.bodyText h3{
+body div.bodyText h3{
 	font:bold 20px/24px Georgia, "Times New Roman", Times, serif; color:#526D0D;
 	background:url(images/folder_icon.gif) no-repeat 0 5px #F7F7F7; padding:0 2px 0 25px;}
-#body div.bodyText h4{
+body div.bodyText h4{
 	font:normal 20px/24px Georgia, "Times New Roman", Times, serif; color:#000000;
 	background-color:#FFF7DE; padding:0 0 0 10px;}
-#body div.bodyText p{
+body div.bodyText p{
 	font:normal 13px/20px Georgia, "Times New Roman", Times, serif; color:#171717;
 	padding:10px 0; background-color:#F7F7F7;}
-#body div.bodyText p a{
+body div.bodyText p a{
 	color:#003E6A; background-color:#F7F7F7; text-decoration:underline;}
-#body div.bodyText p a:hover{
+body div.bodyText p a:hover{
 	text-decoration:none;}
-#body div.catagory{
+body div.catagory{
 	padding:25px 0 0 0;}
 .pink{
 	width:182px; padding:7px 15px 50px; float:left;
