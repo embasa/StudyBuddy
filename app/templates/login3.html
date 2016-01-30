@@ -13,11 +13,12 @@
 -->
    <body>
     <div class="container">
-      <h1>Please login</h1>
       <br>
       <form action="" method="post">
+	<dt>Username:
         <input type="text" placeholder="Username" name="username" value="{{
           request.form.username }}">
+	<dt>Password:
          <input type="password" placeholder="Password" name="password" value="{{
           request.form.password }}">
         <input class="btn btn-default" type="submit" value="Login">
