@@ -28,8 +28,8 @@ def index():
                            user=user,
                            posts=posts)
 
-@app.route('/landing')
-def landing(name='placeholder'):
+@app.route('/landing/<name>')
+def landing(name):
     return render_template("landing.html",myName=name)
 
 @app.route('/login2')
