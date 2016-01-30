@@ -4,16 +4,17 @@
 <div class=page>
   <h1>StudyBuddy</h1>
   <div class=metanav>
-  {% if not session.logged_in %}
+    {% if not session.logged_in %}
     <a href="{{ url_for('register') }}">Register</a>
     <a href="{{ url_for('login') }}">Log in</a>
-    <a href="/index">Index</a></li>
-    <a href="landing">Home</a></li>
-<!--    <a href="login2">Login</a></li> -->
+    <a href="/index">Index</a>
+    <a href="landing">Home</a>
+    <!--    <a href="login2">Login</a></li> -->
     <a href="profile">Profile</a></li>    
-  {% else %}
-    <a href="{{ url_for('logout') }}">log out</a>
-  {% endif %}
+<a href="/inbox"> Messages</a></li>
+{% else %}
+<a href="{{ url_for('logout') }}">log out</a>
+{% endif %}
   </div>
   {% for message in get_flashed_messages() %}
     <div class=flash>{{ message }}</div>
