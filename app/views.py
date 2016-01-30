@@ -3,7 +3,6 @@ from app import app
 
 @app.route('/')
 @app.route('/index')
-@app.route('/landing')
 
 def index():
     user = {'nickname': 'Miguel'}  # fake user
@@ -30,5 +29,6 @@ def index():
                            user=user,
                            posts=posts)
 
+@app.route('/landing')
 def landing():
     return render_template("landing.html")
