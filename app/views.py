@@ -21,7 +21,7 @@ def index():
             },
         {
             'author': {'nickname': 'Bruno'},
-            'body': 'I am the github scapegoat. please let this succeed'
+            'body': 'I am the github scapegoat. cmon baby'
             }
         ]
     return render_template("index.html",
