@@ -29,7 +29,7 @@ def index():
                            posts=posts)
 
 @app.route('/landing')
-def landing(name):
+def landing(name='blah'):
     return render_template("landing.html",myName=name)
 
 @app.route('/login2')
