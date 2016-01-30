@@ -29,3 +29,6 @@ def index():
                            user=user,
                            posts=posts)
 
+def landing():
+    return render_template("landing.html",
+                           "Welcome to the Landing Page!")
