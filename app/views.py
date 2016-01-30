@@ -39,6 +39,7 @@ def inbox():
 
 @app.route('/landing')
 def landing():
+    listings = Listings.query.all();
     name=request.args['name']
     return render_template("landing.html",myName=name)
 
