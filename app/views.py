@@ -29,7 +29,8 @@ def index():
                            posts=posts)
 
 @app.route('/landing')
-def landing(name='blah'):
+def landing():
+    name=request.args['name']
     return render_template("landing.html",myName=name)
 
 @app.route('/login2')
@@ -56,5 +57,4 @@ def profile():
 
 @app.route('/c/<username>')
 def chicken(username):
-
     return 'User %s' % username
