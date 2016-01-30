@@ -8,12 +8,10 @@
   {% if not session.logged_in %}
     <a href="{{ url_for('register') }}">Register</a>
     <a href="{{ url_for('login') }}">Log in</a>
-    <ul>
-    <li><a href="/index">Index</a></li>
-    <li><a href="landing">Home</a></li>
-    <li><a href="login2">Login</a></li>
-    <li><a href="profile">Profile</a></li>
-    </ul>    
+    <a href="/index">Index</a></li>
+    <a href="landing">Home</a></li>
+    <a href="login2">Login</a></li>
+    <a href="profile">Profile</a></li>    
   {% else %}
     <a href="{{ url_for('logout') }}">log out</a>
   {% endif %}
