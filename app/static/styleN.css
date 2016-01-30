@@ -3,7 +3,7 @@ body{
 	font:normal 13px/20px Georgia, "Times New Roman", Times, serif;
 	margin:0; padding:0;}
 div, h1, h2, h3, h4, h5, h6, form, label, input, span, ul, li, p, a{
-	margin:0; padding:0;}
+     color:#1e90ff; margin:0; padding:0; }
 ul{
 	list-style:none;}
 .spacer{
@@ -16,17 +16,17 @@ topNav ul{
 	width:540px; margin:0 auto;}
 topNav ul li{
 	height:37px; float:left;
-	background:url(images/bg.gif) repeat-x 0 0 #292929; color:#C1C1C1;
+	background:url(images/bg.gif) repeat-x 0 0 #292929; color:#1e90ff;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
 topNav ul li a{
 	padding:0 18px; height:37px; float:left; text-decoration:none; display:block;
-	background:url(images/bg.gif) repeat-x 0 0 #292929; color:#C1C1C1;
+	background:url(images/bg.gif) repeat-x 0 0 #292929; color:#1e90ff;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
 topNav ul li a:hover{
 	background:url(images/top_btn_h.gif) no-repeat center bottom;}
 topNav ul li a.hover{
 	padding:0 18px; height:37px; float:left; text-decoration:none; display:block;
-	background:url(images/top_btn_h.gif) no-repeat center bottom; color:#C1C1C1;
+	background:url(images/top_btn_h.gif) no-repeat center bottom; color:#1e90ff;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
 body{
 	width:683px; margin:0 auto; padding:0 0 60px 0;
@@ -39,11 +39,11 @@ body h1{
 body div.bodyText{
 	padding:50px 0 0 0;}
 body div.bodyText h2{
-	font:bold italic 24px/34px Georgia, "Times New Roman", Times, serif; color:#B10000;}
+	font:bold italic 24px/34px Georgia, "Times New Roman", Times, serif; color:#1e90ff;}
 body div.bodyText h2 span{
-	color:#000000; background-color:#F7F7F7;}
+	color:#000000; background-color:#1e90ff;}
 body div.bodyText h3{
-	font:bold 20px/24px Georgia, "Times New Roman", Times, serif; color:#526D0D;
+	font:bold 20px/24px Georgia, "Times New Roman", Times, serif; color:#1e90ff;
 	background:url(images/folder_icon.gif) no-repeat 0 5px #F7F7F7; padding:0 2px 0 25px;}
 body div.bodyText h4{
 	font:normal 20px/24px Georgia, "Times New Roman", Times, serif; color:#000000;
