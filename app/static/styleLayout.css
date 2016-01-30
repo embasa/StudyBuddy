@@ -1,7 +1,12 @@
 *		{ font-family: Arial;}
-div#menuHeader	{ float: left;}
-div#menuHeader   img {width: 50%; height: 50%;}
-div#sbheader	{ font-family: "Verdana"; sans-serif; color: red;}
-div#nav		{ text-align: center; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em; background: #cee5f5; }
-div#error	{ background: #f0d6d6; padding: 0.5em;}
+body {  width: 100%; height: 100%; padding: 0; margin: 0;}
+.centered-wrapper { position: relative; text-align: center;}
+.centered-wrapper:before { content: ""; position: relative; display: inline-block;
+			     width: 0; height: 100%; vertical-align: middle;}
+.centered-stuff   { display: inline-block; vertical-align: middle; outline: 1px solid black;}
+div#menuHeader	  { float: left;}
+div#menuHeaderimg {width: 50%; height: 50%;}
+div#sbheader	  { font-family: "Verdana"; sans-serif; color: red;}
+div#nav		  { text-align: center; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em; background: #cee5f5; }
+div#error	  { background: #f0d6d6; padding: 0.5em;}
 
