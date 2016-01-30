@@ -2,10 +2,10 @@
 <title>Study Buddy</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styleLayout.css') }}">
 <div class=page>
-    <div id="menu-logo">
-      <img src="../static/images/calc_pic.jpg" alt="yo"/>
-    </div>
+    <div id="menuHeader">
+      <img src="../static/images/calc_pic.jpg" alt="yo"/>  
   <h1 id="sbheader">StudyBuddy</h1>
+  </div>
   <div class=metanav id="nav">
     {% if not session.logged_in %}
         <a href="{{ url_for('register') }}">Register</a>
