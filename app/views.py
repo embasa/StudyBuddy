@@ -32,3 +32,7 @@ def index():
 @app.route('/landing')
 def landing():
     return render_template("landing.html")
+
+@app.route('/login2')
+def landing():
+    return render_template("login2.html")
