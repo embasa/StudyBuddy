@@ -3,7 +3,6 @@ from app import app
 
 @app.route('/')
 @app.route('/index')
-
 def index():
     user = {'nickname': 'Miguel'}  # fake user
     posts = [  # fake array of posts
@@ -22,7 +21,12 @@ def index():
         {
             'author': {'nickname': 'Bruno'},
             'body': 'I am the github scapegoat. cmon baby please work, it works'
-            }
+            },
+        {
+            'author': {'nickname': 'Luc'},
+            'body': ''}
+
+
         ]
     return render_template("index.html",
                            title='Home',
