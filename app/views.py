@@ -34,5 +34,14 @@ def landing():
     return render_template("landing.html")
 
 @app.route('/login2')
+<<<<<<< HEAD
 def login2():
+=======
+def login():
+>>>>>>> c6e90163f975aa65a86aa0ddecffce57ce093d33
     return render_template("login2.html")
+
+
+@app.route('/profile')
+def profile():
+    return render_template("profile.html")
