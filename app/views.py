@@ -2,8 +2,13 @@ from flask import Flask, render_template, redirect, url_for, request
 from app import app
 
 @app.route('/')
+
 @app.route('/index')
 def index():
+    return render_template("index.html")
+
+@app.route('/inbox')
+def inbox():
     user = {'nickname': 'Miguel'}  # fake user
     posts = [  # fake array of posts
         { 
@@ -27,7 +32,7 @@ def index():
 
 
         ]
-    return render_template("index.html",
+    return render_template("inbox.html",
                            title='Home',
                            user=user,
                            posts=posts)

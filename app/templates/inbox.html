@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+<body>
+ <h1>Hi Admin (Current USER) you have the following messages:</h1> 
+ <h2>Student, Cabrillo College</h2>
+  {% for post in posts %}
+  <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
+  {% endfor %}
+</body>
+{% endblock %}
+    
