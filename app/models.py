@@ -23,7 +23,7 @@ class Sessions(db.Model):
     title = db.Column(db.String(20), index=True, unique=True)
 
     def __repr__(self):
-        return <'Title: %r>' % (self.title)
+        return '<Title: %r>' % (self.title)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
