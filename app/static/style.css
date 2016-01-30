@@ -1,4 +1,3 @@
-/* CSS Document */
 body{
 	background:url(images/bg.gif) repeat-x 0 0 #F7F7F7; color:#171717;
 	font:normal 13px/20px Georgia, "Times New Roman", Times, serif;
@@ -11,7 +10,6 @@ ul{
 	font-size:0; line-height:0; clear:both;}
 
 
-/* -- top navigation start -- */
 #topNav{
 	width:683px; margin:0 auto; height:37px;}
 #topNav ul{
@@ -30,9 +28,6 @@ ul{
 	padding:0 18px; height:37px; float:left; text-decoration:none; display:block;
 	background:url(images/top_btn_h.gif) no-repeat center bottom; color:#C1C1C1;
 	font:bold 12px/37px Arial, Helvetica, sans-serif;}
-/* -- top navigation start -- */
-
-/* -- body start -- */
 #body{
 	width:683px; margin:0 auto; padding:0 0 60px 0;
 	background:url(images/header_bg.gif) no-repeat right top #F7F7F7; color:#171717;}
@@ -218,7 +213,6 @@ form.login a:hover{
 .footer p.tworld a:hover{
 	font:bold 12px/16px Arial, Helvetica, sans-serif; color:#404040;
 	background-color:#FFFFFF; text-align:center; text-decoration:none;}
-/* footer end -- */
 
 
 
