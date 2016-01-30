@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
+    <h2>Hi, {{ user.nickname }} you have the following messages:</h2>
     {% for post in posts %}
     <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
