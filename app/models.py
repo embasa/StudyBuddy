@@ -14,8 +14,16 @@ class Logins(db.Model):
 
 class Sessions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(60), index=True, unique=True)
     location = db.Column(db.String(60), index=True, unique=True)
-    subject = db.Column(db.String(20), 
+    section = db.Column(db.String(20), index=True, unique=True)
+    start_time = db.Column(db.String(10), index=True, unique=True)
+    stop_time = db.Column(db.String(10), index=True, unqiue=True)
+    subject = db.Column(db.String(20), index=True, unique=True)
+    title = db.Column(db.String(20), index=True, unique=True)
+
+    def __repr__(self):
+        return <'Title: %r>' % (self.title)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
