@@ -1,6 +1,6 @@
 *		{ font-family: Arial;}
 div#menu-logo	{ width: 10%; float: left;}
-div#menu-logo   img {width: 50%;}
+div#menu-logo   img {width: 50%; height: 50%;}
 div#sbheader	{ font-family: "Verdana"; sans-serif; color: cobalt;}
 div#nav		{ text-align: center; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em; background: #cee5f5; }
 div#error	{ background: #f0d6d6; padding: 0.5em;}
