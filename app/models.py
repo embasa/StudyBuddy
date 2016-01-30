@@ -7,7 +7,10 @@ class Logins(db.Model):
     username = db.Column(db.String(60), index=True, unique=True)
 
     def __repr__(self):
-        return
+        email = '<email: %r >' % (self.email)
+        pwhash = 'pwhash: %r >' % (self.pwhash)
+        username = 'username: %r >' % (self.username)
+        return email + " " + pwhash + " " + username
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
