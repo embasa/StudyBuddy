@@ -17,8 +17,7 @@ def index():
         {
             'author': {'nickname': 'Frank'},
             'body': 'What are you talking about?'
-            },
-        {
+            }, {
             'author': {'nickname': 'Bruno'},
             'body': 'I am the github scapegoat. cmon baby please work, it works'
             },
@@ -35,7 +34,8 @@ def index():
 
 @app.route('/landing')
 def landing():
-    return render_template("landing.html")
+    name=request.args['name']
+    return render_template("landing.html",myName=name)
 
 @app.route('/login2')
 def login2():
@@ -48,7 +48,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] !='admin':
             error = 'Invalid Credentials. Please try again.'
         else:
-            return redirect(url_for('landing'))
+            return redirect(url_for('landing',name=request.form['username']))
     return render_template("login3.html", error=error)
 
 @app.route('/register')
