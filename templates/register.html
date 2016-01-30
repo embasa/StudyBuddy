@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Registration</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="{{ url_for('register') }}" method=post>
+    <dl>
+   <!--      <div class="dropdown">
+	<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+	  <span class="caret"></span></button>
+	<ul class="dropdown-menu">
+	  <li><a href="#">HTML</a></li>
+	  <li><a href="#">CSS</a></li>
+	  <li><a href="#">JavaScript</a></li>
+	</ul>
+      </div>
+-->
+   <select>
+     <option value="ucsc">University of California, Santa Cruz </option>
+     <option value="sjsu">San Jose State University </option>
+     <option value="ucb">University of California, Berkeley </option>
+     <option value="stanford">Stanford University</option>
+   </select>
+   <dt> <--->
+   <dt>Email:
+	<dd><input type=text name=email>
+	  <dt>Username:
+	    <dd><input type=text name=username>
+	      <dt>Password:
+		<dd><input type=password name=password>
+		  <dt>Repeat:
+		    <dd><input type= password name=repassword>
+		    <dd><input type=submit value=Register>
+    </dl>
+  </form>
+  {% endblock %}
+  
