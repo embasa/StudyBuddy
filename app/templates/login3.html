@@ -21,7 +21,8 @@
 	<dt>Password:
           <input type="password" placeholder="Password" name="password" value="{{
 									       request.form.password }}">
-       <p>   <input class="btn btn-default" type="submit" value="Login"> </p>
+	  <br />
+	  <p>   <input class="btn btn-default" type="submit" value="Login"> </p>
       </form>
       {% if error %}
       <p class="error"><strong>Error:</strong> {{ error }}
