@@ -30,5 +30,4 @@ def index():
                            posts=posts)
 
 def landing():
-    return render_template("landing.html",
-                           "Welcome to the Landing Page!")
+    return render_template("landing.html")
