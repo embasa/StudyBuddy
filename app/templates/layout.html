@@ -1,23 +1,23 @@
 <!doctype html>
 <title>Study Buddy</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styleN.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styleLayout.css') }}">
 <div class=page>
-  <h1>StudyBuddy</h1>
-  <div class=metanav>
+  <h1 id="sbheader">StudyBuddy</h1>
+  <div class=metanav id="nav">
     {% if not session.logged_in %}
-    <a href="{{ url_for('register') }}">Register</a>
-    <a href="{{ url_for('login') }}">Log in</a>
-    <a href="/index">Index</a>
-    <a href="landing">Home</a>
-    <!--    <a href="login2">Login</a></li> -->
-    <a href="profile">Profile</a></li>    
-<a href="/inbox"> Messages</a></li>
-{% else %}
-<a href="{{ url_for('logout') }}">log out</a>
-{% endif %}
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Log in</a>
+        <a href="/index">Index</a>
+        <a href="landing">Home</a>
+        <!--    <a href="login2">Login</a></li> -->
+        <a href="profile">Profile</a></li>    
+        <a href="/inbox"> Messages</a></li>
+    {% else %}
+        <a href="{{ url_for('logout') }}">log out</a>
+    {% endif %}
   </div>
   {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
+    <div class=flash>{{ message }} id="error"</div>
   {% endfor %}
   {% block body %}{% endblock %}
 </div>
