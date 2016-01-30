@@ -4,9 +4,9 @@ body 		{  width: 100%; height: 100%; padding: 0; margin: 0;}
 		.centered-wrapper:before { content: ""; position: relative; display: inline-block;
 		 width: 0; height: 100%; vertical-align: middle;}
 .centered-stuff   { display: inline-block; vertical-align: middle; outline: 1px solid black;}
-div#menuHeader	  { float: left; text-align: left; margin-top: 1em}
-div#menuHeader img{width: 30%; height: 30%;}
-div#sbheader	  { font-family: "Verdana"; sans-serif; color: red;}
-div#nav		  { text-align: center; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em; background: #cee5f5; }
+header		  { float: left; text-align: left; margin-top: 1em}
+header		   img{width: 30%; height: 30%;}
+div#sbheader	  { font-family: "Arial"; sans-serif; color: red;}
+nav#menu	  { text-align: center; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em; background: #cee5f5; }
 div#error	  { background: #f0d6d6; padding: 0.5em;}
 
