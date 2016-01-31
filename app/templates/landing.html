@@ -24,12 +24,13 @@
   <div id="map" style="height: 400px; width:300px; float: right"></div>
   <div><h1 id="showit"></h3></div>
 </div>
+
 <div id="left">
-    <div>
+    <!--<div>
     {% for item in listings %}
         <span onclick=test_func({{ item|safe }});>blah{{ item }}</span>
     {% endfor %}
-    </div>
+    </div>-->
   <div class="sesssion">
     {% for listing in listings %}
     <div class ="box-blue">
@@ -39,13 +40,6 @@
       {{listing.longitude}}
     </div>
     <div class ="box-green">
-      {{listing.location}} <br>
-      {{listing.title}}  <br>
-      {{listing.latitude}} <br>
-      {{listing.longitude}}
-    </div>
-
-    <div class ="box-red">
       {{listing.location}} <br>
       {{listing.title}}  <br>
       {{listing.latitude}} <br>
