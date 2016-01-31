@@ -30,6 +30,7 @@ def add_listing():
 
 # Frank created this method as a placeholder to actually create the session.
 def after_add_listing():
+    pass
     # insert code here that will create a new session
 
 @app.route('/inbox')
