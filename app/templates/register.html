@@ -4,38 +4,26 @@
   {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
   <form action="{{ url_for('register') }}" method=post>
     <dl>
-   <!--      <div class="dropdown">
-	<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-	  <span class="caret"></span></button>
-	<ul class="dropdown-menu">
-	  <li><a href="#">HTML</a></li>
-	  <li><a href="#">CSS</a></li>
-	  <li><a href="#">JavaScript</a></li>
-	</ul>
-      </div>
--->
-   <select>
-     <option value="ucsc">University of California, Santa Cruz </option>
-     <option value="sjsu">San Jose State University </option>
-     <option value="ucb">University of California, Berkeley </option>
-     <option value="stanford">Stanford University</option>
-   </select>
-   <dt> <--->
-   <dt>Email:
-	<dd><input type=text name=email>
-	  <dt>Username:
-	    <dd><input type=text name=username>
-	      <dt>Password:
-		<dd><input type=password name=password id="pass1">
-		  <dt>Repeat:
-		    <dd><input type= password name=repassword id="pass2" onkeyup="checkPass(); return false">
-            <span id="confirmMessage"></span>
-		    <dd><input type=submit id="mySubmit"  value=Register disabled>
+      <select>
+        <option value="ucsc">University of California, Santa Cruz </option>
+        <option value="sjsu">San Jose State University </option>
+        <option value="ucb">University of California, Berkeley </option>
+        <option value="stanford">Stanford University</option>
+      </select>
+      <dt>Email:
+      <dd><input type=text name=email>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=password id="pass1">
+      <dt>Repeat:
+      <dd><input type= password name=repassword id="pass2" onkeyup="checkPass(); return false">
+      <span id="confirmMessage"></span>
+      <dd><input type=submit id="mySubmit"  value=Register disabled>
     </dl>
   </form>
   <script>
-function checkPass()
-{
+   function checkPass(){
     //Store the password field objects into variables ...
     var pass1 = document.getElementById('pass1');
     var pass2 = document.getElementById('pass2');
@@ -64,7 +52,7 @@ function checkPass()
         message.innerHTML = "Passwords Do Not Match!"
         submito.disabled = true;
     }
-} 
+   } 
   </script>
-  {% endblock %}
+{% endblock %}
   
