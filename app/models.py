@@ -27,6 +27,15 @@ class Listings(db.Model):
     subject = db.Column(db.String(60), index=True, unique=True)
     title = db.Column(db.String(60), index=True, unique=True)
 
+    def __init__(self, description, location, section, start_time, stop_time, subject, title):
+        self.description = description
+        self.location = location
+        self.section = section
+        self.start_time = start_time
+        self.stop_time = stop_time
+        self.subject = subject
+        self.title = title
+
     def __repr__(self):
         description = 'Description: %r' % str(self.description)
         location = 'Location: %r' % str(self.location)
