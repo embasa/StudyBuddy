@@ -45,7 +45,7 @@ def add_listing():
             error = 'You already have an active session with this title.'
             return render_template('add_listing.html',title='Create Session',form=None)
         else:
-            return redirect(url_for('landing'),blah='moooness')
+            return redirect(url_for('landing'))
     else:
         return render_template('add_listing.html',title='Create Session',form=None)
 
