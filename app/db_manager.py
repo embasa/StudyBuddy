@@ -6,6 +6,7 @@ dneError = 'not found'
 inSessionError = 'already added'
 sessionError = 'session exists'
 pwError = 'invalid password'
+hostError = 'no host'
 
 def get_user(username):#returns user matching username or None
     return models.Logins.query.filter(username == username).first()
@@ -26,14 +27,17 @@ def create_user(email, pwhash, username):
     return True
     
 def create_session(description, location, section, start_time, stop_time, subject, title, host, participants,latitude,longitude):
-    sessions = models.Listings.query.all()
-    for session in sessions:
-        if session.host == host and session.title == title:
-            return sessionError
-    session = models.Listings(description, location, section, start_time, stop_time, subject, title, host, participants,latitude,longitude)
-    db.session.add(session)
-    db.session.commit()
-    return True
+    if host is not None:
+        sessions = models.Listings.query.all()
+        for session in sessions:
+            if session.host == host and session.title == title:
+                return sessionError
+        session = models.Listings(description, location, section, start_time, stop_time, subject, title, host, participants,latitude,longitude)
+        db.session.add(session)
+        db.session.commit()
+        return True
+    else: 
+        return hostError
 
 def add_participant(new_participant, title, host):#verify new participant exists
     user = get_user(new_participant)

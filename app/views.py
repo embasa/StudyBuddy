@@ -107,15 +107,23 @@ def login():
 
 @app.route('/register', methods=['GET','POST'])
 def register():
+    error = None
     if request.method == 'POST':
         email = request.form['email']
         username = request.form['username']
         password = request.form['password']
-        if db_manager.create_user(email, password, username) == True:
-            return redirect(url_for('login'))
+        data = db_manager.create_user(email, password, username)
+        if data == db_manager.usernameError:
+            error = 'This username is taken.'
+            return render_template('register.html')
+        elif data == db_manager.emailError:
+            error = 'This email is taken.'
+            return render_template('register.html')
         else:
             return render_template('register.html')
-    return render_template('register.html')
+
+    else:
+        return render_template("login3.html")
 
 @app.route('/profile')
 def profile():
