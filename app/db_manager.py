@@ -73,4 +73,6 @@ class db_manager(object):
             return self.dneError
         elif userCheck.pwhash != pwhash:
             return self.pwError
+        else:
+            return True;
         
