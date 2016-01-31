@@ -14,13 +14,13 @@ class Logins(db.Model):
 
 class Listings(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(60), index=True, unique=True)
-    location = db.Column(db.String(60), index=True, unique=True)
-    section = db.Column(db.String(60), index=True, unique=True)
-    start_time = db.Column(db.String(60), index=True, unique=True)
-    stop_time = db.Column(db.String(60), index=True, unique=True)
-    subject = db.Column(db.String(60), index=True, unique=True)
-    title = db.Column(db.String(60), index=True, unique=True)
+    description = str(db.Column(db.String(60), index=True, unique=True))
+    location = str(db.Column(db.String(60), index=True, unique=True))
+    section = str(db.Column(db.String(60), index=True, unique=True))
+    start_time = str(db.Column(db.String(60), index=True, unique=True))
+    stop_time = str(db.Column(db.String(60), index=True, unique=True))
+    subject = str(db.Column(db.String(60), index=True, unique=True))
+    title = str(db.Column(db.String(60), index=True, unique=True))
 
     def __repr__(self):
         description = 'Description: %r' % (self.description)
