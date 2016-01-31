@@ -57,7 +57,7 @@ def landing():
         name = session['username']
     else:
         return redirect(url_for('login'))
-    return render_template("landing.html",myName=name)
+    return render_template("landing.html",myName=name,listings=listings)
 
 @app.route('/login2')
 def login2():

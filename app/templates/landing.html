@@ -3,18 +3,18 @@
 <div>
   <h2> {{ myName }}</h2>
 </div>
+
 <div class="Studyseshs">Current Study Sessions</div>
 
-<div class="box-blue">Did it change?.</div>
-<div class="box-green">Enter study sesh here.</div>
-<div class="box-red">Enter study sesh here.</div>
-<div style="text-decoration:none; overflow:hidden; height:500px; width:500px; max-width:100%;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=140+Myrtle+St,+Santa+Cruz,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-code" href="http://www.bootstrapskins.com/themes/html" id="get-data-for-map">premium html themes</a><style>#google-maps-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.bootstrapskins.com/google-maps-authorization.js?id=1041ed27-8a0d-f4d0-f423-9c64b082e614&c=embed-map-code&u=1454206226" defer="defer" async="async"></script>
 <div>
-<body>
-    {% for listing in Listings %}
-    <ul>{{listing}}</ul>
+  <body>
+    {% for listing in listings %}
+      <div class ="box-blue">{{listing}}</div>
     {% endfor %}
   </body>
 </div>
+
+
+<div style="text-decoration:none; overflow:hidden; height:500px; width:500px; max-width:100%;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=140+Myrtle+St,+Santa+Cruz,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-code" href="http://www.bootstrapskins.com/themes/html" id="get-data-for-map">premium html themes</a><style>#google-maps-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.bootstrapskins.com/google-maps-authorization.js?id=1041ed27-8a0d-f4d0-f423-9c64b082e614&c=embed-map-code&u=1454206226" defer="defer" async="async"></script>
 
 {% endblock %}

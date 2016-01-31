@@ -23,13 +23,13 @@ class Listings(db.Model):
     title = db.Column(db.String(60), index=True, unique=True)
 
     def __repr__(self):
-        description = '<Description: %r>' % (self.description)
-        location = '<Location: %r>' % (self.location)
-        section = '<Section: %r>' % (self.section)
-        start_time = '<Start Time: %r>' % (self.start_time)
-        stop_time = '<Stop Time: %r>' % (self.stop_time)
-        subject = '<Subject: %r>' % (self.subject)
-        title = '<Title: %r>' % (self.title)
+        description = 'Description: %r' % (self.description)
+        location = 'Location: %r' % (self.location)
+        section = 'Section: %r' % (self.section)
+        start_time = 'Start Time: %r' % (self.start_time)
+        stop_time = 'Stop Time: %r' % (self.stop_time)
+        subject = 'Subject: %r' % (self.subject)
+        title = 'Title: %r' % (self.title)
         return (title + ' ' + location + '\n'
                 + subject + ' ' + section + '\n'
                 + start_time + ' ' + stop_time + '\n'
