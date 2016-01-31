@@ -14,7 +14,7 @@
     <p>
       <div id="map" style="height: 350px; width: 350px; float:right;"> </div>
     </p>
-    <div>
+    <div class="session">
     {% for listing in listings %}
     <div class ="box-blue">
         {{listing.title}} - {{listing.location}} <br>
@@ -35,8 +35,8 @@
         {{listing.description}}
     </div>
     {% endfor %}
-    
-  </body>
+  </div>  
+</body>
 </div>
 </html>
 
