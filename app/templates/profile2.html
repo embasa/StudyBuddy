@@ -17,6 +17,8 @@
           width: 600px;
           }
         </style>
+  </head>
+  <body>    
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o" async defer></script>     
 	<script>
 	  var map;
@@ -56,7 +58,7 @@
 	  };
 	  
 	  
-	  map = new google.maps.Map(document.getElementById('map-canvas'), mapOps);
+	  map = new google.maps.Map(document.getElementById('map'), mapOps);
 	  infoWindow = new google.maps.InfoWindow();
 	  // Closes infoWin after a click on map                                                         
 	  google.maps.event.addListener(map, 'click', function() {
@@ -105,8 +107,7 @@
 </script>
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initiliazeMap" async defer></script>-->   
 
-  </head>
-  <body>    
-    <div id="map-canvas"></div>
+
+    <div id="map"></div>
   </body>
 </html>
