@@ -8,7 +8,7 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 .wrapper	 { text-align: center; float: center; margin-top: 1em;}
 .head		   img{width: 10%; height: 10%;}
 .sbheader	 { font-family: "Arial"; sans-serif; color: gray;}
-.menu	         { text-align: center; float: center; font-size: 0.8em; padding: 0.3em; 
+.menu	         { text-align: center; float: center; font-size: 0.8em; padding: 0.5em; 
 		   margin-bottom: 1em; background-color: LightGray;}
 .flash	  	 { background: #f0d6d6; padding: 0.5em;}
 .Studyseshs 	 { float: right; color: purple;}
@@ -17,6 +17,7 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 }
 a:hover, a:active{
     color: white;
+    font-size: 150%;
 }
 a:active{
     font-style: italic;
