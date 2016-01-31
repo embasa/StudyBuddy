@@ -11,6 +11,7 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 .menu	         { text-align: center; float: center; font-size: 0.8em; padding: 0.5em; 
 		   margin-bottom: 1em; background-color: LightGray;}
 .flash	  	 { background: #f0d6d6; padding: 0.5em;}
+.error		 { color: red}
 .Studyseshs 	 { float: right; color: purple;}
 .link {
     color: black;
