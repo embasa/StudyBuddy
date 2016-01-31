@@ -57,6 +57,7 @@ class Listings(db.Model):
                 + participants)
                
 class ActiveSessions(db.Model):
+    __tablename__ = 'ActiveSessions'
     participant = db.Column(db.String(64), index=True, unique=False)
     title = db.Column(db.String(64), index=True, unique=False)
     host =  db.Column(db.String(64), index=True, unique=False)
