@@ -9,7 +9,7 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 .head		   img{width: 10%; height: 10%;}
 .sbheader	 { font-family: "Arial"; sans-serif; color: gray;}
 .menu	         { text-align: center; float: center; position: fixed; font-size: 0.8em; padding: 0.3em; 
-		   margin-bottom: 1em;background-color: gray; max-width:600px;}
+		   margin-bottom: 1em;background-color: LightGray;}
 .flash	  	 { background: #f0d6d6; padding: 0.5em;}
 .Studyseshs 	 { float: right; color: purple;}
 .active {
