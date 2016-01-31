@@ -23,6 +23,7 @@ class db_manager(object):
         user = models.Logins(email, pwhash, username)
         db.session.add(user)
         db.session.commit()
+        return True
         
     def create_session(self, description, location, section, start_time, stop_time, subject, title, host, participants):
         sessions = models.Listings.query.all()
@@ -32,6 +33,7 @@ class db_manager(object):
         session = models.Listings(description, location, section, start_time, stop_time, subject, title, host, participants)
         db.session.add(session)
         db.session.commit()
+        return True
 
     def add_participant(self, new_participant, title, host):#verify new participant exists
         user = self.get_user(new_participant)
@@ -46,6 +48,7 @@ class db_manager(object):
             participant = models.ActiveSessions(new_participant, title, host)
             db.session.add(participant)
             db.session.commit()
+            return True
 
     def delete_user(self, username): 
         user = models.Logins.query.filter(username == username).first()
@@ -73,4 +76,6 @@ class db_manager(object):
             return self.dneError
         elif userCheck.pwhash != pwhash:
             return self.pwError
+        else:
+            return True
         

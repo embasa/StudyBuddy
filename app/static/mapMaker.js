@@ -1,8 +1,11 @@
-// This java script file creates a google map with markers
-function initialize(){
+//This java script file creates a google map with markers!
+//Here is a sample call, which adds a study session pin point
+//on the map at latude = args[0] and longitude = args[1]
+//intialize(36.9765546,-122.0323493,"Breakfast at?","The Abbey");
+function initialize(args){
 var map;
 var infoWindow;
-var markers = [
+var listings = [
 	       { 
 		   lat: 36.9740497,
 		   lng: -122.0260089,
@@ -28,7 +31,11 @@ var markers = [
 		   postalCode:"95064"
 	       }
 	       ];
-
+// Clears listings
+function clear() {
+    listings = [ ];
+}
+//Initializes map 
 function initializeMap() {
     var mapOps = {
         center: new google.maps.LatLng(36.976349,-122.0292952),
@@ -42,27 +49,23 @@ function initializeMap() {
     google.maps.event.addListener(map, 'click', function() {
 	    infoWindow.close();
         });
-    
-    // DISPLAY THEM                                                                                                                                                                  
     displayMarkers();
 }
-google.maps.event.addDomListener(window, 'load', initializeMap);
-
-
+//Displays the currently active study sessions, aka listings.
 function displayMarkers(){
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i< markers.length; i++){
-	var latlng = new google.maps.LatLng(markers[i].lat, markers[i].lng);
-	var name = markers[i].name;
-	var add1 = markers[i].address1;
-	var add2 = markers[i].address2;
-	var pCode = markers[i].postalCode;
+	var latlng = new google.maps.LatLng(listings[i].lat, listings[i].lng);
+	var name = listings[i].name;
+	var add1 = listings[i].address1;
+	var add2 = listings[i].address2;
+	var pCode = listings[i].postalCode;
 	createMarker(latlng, name, add1, add2, pCode);
 	bounds.extend(latlng);
     }
     map.fitBounds(bounds);
 }
-
+//Creates an individual marker object(inherts some properties of listing)
 function createMarker(latlng, name, add1, add2, pCode){
     var marker = new google.maps.Marker({
 	    map: map,
@@ -80,5 +83,22 @@ function createMarker(latlng, name, add1, add2, pCode){
 	    infoWindow.setContent(iwContent);
 	    infoWindow.open(map, marker); // open in map at marker loc
 	});
+}
+//All script calls go here.//
+//if c ==0 is passed, clear listings!
+//This is the normal running procedure, posts for all sessions.
+listings.push(args[0],args[1],args[2],args[3]);
+/*
+  lat: 37.000353,
+  lng: -122.0631443,
+  name: "study sesh3",
+  address1: "Jack Baskin",
+  address2: "UC Santa Cruz",
+  postalCode:"95064"
+*/
+if(args[0] == 0){
+    clear();
+}else{
+    google.maps.event.addDomListener(window, 'load', initializeMap);
 }
 }
