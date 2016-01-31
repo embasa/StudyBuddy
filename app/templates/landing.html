@@ -5,18 +5,15 @@
 </div>
 <div class="Studyseshs">
   <h3>Current Study Sessions</h3>
-<head>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o" async defer></script>-->
-  <script src="../static/mapMaker.js"></script>
-  <script> initialize(36.9765546,-122.0323493,"Breakfast at?","The Abbey");</script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>
-  <p>
-    <div id="map" style="height: 350px; width: 350px; float:right;"> </div>
-  </p>
-</head>
-
 
 <body>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o" async defer></script>-->
+    <script src="../static/mapMaker.js"></script>
+    <script> initialize(36.9765546,-122.0323493,"Breakfast at?","The Abbey");</script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>
+    <p>
+      <div id="map" style="height: 350px; width: 350px; float:right;"> </div>
+    </p>
     <div>
     {% for listing in listings %}
     <div class ="box-blue">
@@ -41,16 +38,6 @@
     
   </body>
 </div>
-<head>
-  <style>
-    p {
-    height: 600px;
-    width: 600px;
-    margin: 5px;
-    padding: 5px;
-    } 
-  </style>
-</head>
 </html>
 
 
