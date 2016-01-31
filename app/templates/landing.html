@@ -12,24 +12,24 @@
   </form>
 </div>
 <div id="right">
+<!--
     <script type="text/javascript">
     function test_func(data) {
                 console.log(data);
                     }
     test_func({{ data|safe }})
     </script>
-  <script src="../static/mapMaker.js"></script>
-  <script> initialize({{ listings|safe }});</script>
+-->  
+<script src="../static/mapMaker.js"></script>
+  <script> initialize({{listings}});</script>
   <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>
-  <div id="map" style="height: 400px; width:300px; float: right"></div>
-  <div><h1 id="showit"></h3></div>
+  <div id="map" style="height: 500px; width:400px; float: right"></div>
 </div>
-
 <div id="left">
-     {% for item in listings %}
+  <!--  {% for item in listings %}
         <span onclick=test_func( {{ item|safe }} );> {{ item }}</span>
-    {% endfor %}
-    </div>-
+	{% endfor %}
+    </div>-->
   <div class="sesssion">
     {% for listing in listings %}
     <div class ="box-blue">
