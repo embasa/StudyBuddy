@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request,session,escape
 from app import app, models, db
+from .forms import AddListingForm
 
 #idafsdalfasdfl;akjdsflj
 app.secret_key = 'hubbahubba'
@@ -18,11 +19,18 @@ def index():
     print('CHANGE')
     return redirect(url_for('login'))
 
-# this is franks add listing form!
-@app.route('/add_listing')
+# Frank created this view to generate a page where users can create a session.
+@app.route('/add_listing', methods=['GET', 'POST'])
 def add_listing():
     form = AddListingForm()
+    if form.validate_on_submit():
+        flash('Login requested in order to create a new session!')
+        return redirect('/login')
     return render_template('add_listing.html',title='Create Session',form=form)
+
+# Frank created this method as a placeholder to actually create the session.
+def after_add_listing():
+    # insert code here that will create a new session
 
 @app.route('/inbox')
 def inbox():

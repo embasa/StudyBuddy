@@ -3,7 +3,7 @@ from wtforms import StringField, BooleanField
 from wtforms.validators import DataRequired
 
 class AddListingForm(Form):
-    description = StringField('description', Validators=[DataRequired()])
+    description = StringField('description', validators=[DataRequired()])
     location = StringField('openid', validators=[DataRequired()])
     section = StringField('openid', validators=[DataRequired()])
     start_time = StringField('openid', validators=[DataRequired()])
