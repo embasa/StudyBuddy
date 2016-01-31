@@ -12,7 +12,9 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 		   margin-bottom: 1em;background-color:#d8ecf7; max-width:300px;}
 .flash	  	 { background: #f0d6d6; padding: 0.5em;}
 .Studyseshs 	 { float: right; color: purple;}
-
+.active {
+    color: white;
+}
 
 /* Colored Content Boxes */
 .box-blue,
