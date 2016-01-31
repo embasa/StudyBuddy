@@ -19,8 +19,8 @@ var markers = [
 		   postalCode:"95060"
 	       },
 	       {      
-		   lat: lng, 37.000353,
-		   lng:-122.0631443,
+		   lat: 37.000353,
+		   lng: -122.0631443,
 		   name: "study sesh3",
 		   address1: "Jack Baskin",
 		   address2: "UC Santa Cruz",
@@ -28,7 +28,7 @@ var markers = [
 	       }
 	       ];
 
-function initiliazeMap() {
+function initializeMap() {
     var mapOps = {
         center: new google.maps.LatLng(36.976349,-122.0292952),
         zoom: 8,
