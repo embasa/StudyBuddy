@@ -17,10 +17,8 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 }
 a:hover, a:active{
     color: white;
-    font-size: 150%;
-}
-a:active{
-    font-style: italic;
+    font-size: 110%;
+    font-style: italic;	
 }
 
 /* Colored Content Boxes */
