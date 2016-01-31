@@ -120,10 +120,10 @@ def register():
             error = 'This email is taken.'
             return render_template('register.html')
         else:
-            return render_template('register.html')
+            return render_template('login3.html')
 
     else:
-        return render_template("login3.html")
+        return render_template('register.html')
 
 @app.route('/profile')
 def profile():
