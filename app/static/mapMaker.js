@@ -1,5 +1,5 @@
 // This java script file creates a google map with markers
-function initialize(){
+function initialize(args){
 var map;
 var infoWindow;
 var markers = [
@@ -84,7 +84,16 @@ function createMarker(latlng, name, add1, add2, pCode){
 //All script calls go here.//
 //if c ==0 is passed, clear listings!
 //This is the normal running procedure, posts for all sessions.
-if(c ==0){
+markers.push(args[0],args[1],args[2],args[3]);
+/*
+  lat: 37.000353,
+  lng: -122.0631443,
+  name: "study sesh3",
+  address1: "Jack Baskin",
+  address2: "UC Santa Cruz",
+  postalCode:"95064"
+*/
+if(args[0] == 0){
     clear();
 }else{
     google.maps.event.addDomListener(window, 'load', initializeMap);
