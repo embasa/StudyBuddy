@@ -98,6 +98,8 @@ def landing():
 def login2():
     return render_template("login2.html")
 
+
+@app.route('/login',methods=['GET','POST'])
 def login():
     error = None
     if request.method == 'POST':
