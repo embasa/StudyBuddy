@@ -5,7 +5,14 @@
 </div>
 <div class="Studyseshs">
   <h3>Current Study Sessions</h3>
-  <body>
+<body>
+    <div>
+      DUMMY BOX <br>
+      <br>
+      <br>
+      DUMMY BOX <br>
+      <br>
+    <!-- 
     {% for listing in listings %}
     <div class ="box-blue">
         {{listing.title}} - {{listing.location}} <br>
@@ -20,20 +27,20 @@
         {{listing.description}}
     </div>
     {% endfor %}
+    -->
   </body>
 </div>
 <head>
   <style>
     p {
-    height: 350px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
     margin: 10px;
     padding: 10px;
-    float:right;
     } 
   </style>
 </head>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o" async defer></script>
   <script src="../static/mapMaker.js"></script>
   <script>
     initialize(36.9765546,-122.0323493,"Breakfast at?","The Abbey");
@@ -41,7 +48,7 @@
   <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>
   <p>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initiliazeMap" async defer></script>-->
-    <div id="map" style="height: 300px; width 300px; float:right;"> </div>
+    <div id="map" style="height: 350px; width: 350px; float:right;"> </div>
   </p>
 </html>
 

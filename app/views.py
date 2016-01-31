@@ -1,3 +1,4 @@
+import db_manager
 from flask import Flask, render_template, redirect, url_for, request,session,escape
 from app import app, models, db
 from .forms import AddListingForm
@@ -22,6 +23,16 @@ def index():
 # Frank created this view to generate a page where users can create a session.
 @app.route('/add_listing', methods=['GET', 'POST'])
 def add_listing():
+    if request.method == 'POST':
+        data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
+                                         request.form['start_time'], request.form['stop_time'], request.form['subject'],
+                                         request.form['title'], request.form['host'], request.form['participants'])
+        if data == 'session exists':
+             error = 'You already have an active session with this title.'
+        else:
+            return redirect(url_for('landing'))
+
+
     form = AddListingForm()
     if form.validate_on_submit():
         flash('Login requested in order to create a new session!')
@@ -33,9 +44,9 @@ def add_listing():
 def after_add_listing():
     error = None
     if request.method == 'POST':
-        data = db_manager.create_session(request.form[description], request.form[location], request.form[section], 
-                                         request.form[start_time], requwst.form[stop_time], request.form[subject], 
-                                         request.form[title], request.form[host], request.form[participants])
+        data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
+                                         request.form['start_time'], request.form['stop_time'], request.form['subject'],
+                                         request.form['title'], request.form['host'], request.form['participants'])
         if data == 'session exists':
              error = 'You already have an active session with this title.'
         else:
@@ -88,15 +99,19 @@ def landing():
 def login2():
     return render_template("login2.html")
 
-@app.route('/login', methods =['GET', 'POST'])
+
+@app.route('/login',methods=['GET','POST'])
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] !='admin':
-            error = 'Invalid Credentials. Please try again.'
-        else:
-            session['username'] = request.form['username']
+        username = request.form['username']
+        password = request.form['password']
+        if db_manager.user_validation(password,username):
+            session['username'] = username
             return redirect(url_for('landing'))
+        else:
+            error = 'Invalid Credentials. Please try again.'
+            return render_template("login3.html", error=error)
     return render_template("login3.html", error=error)
 
 @app.route('/register')
