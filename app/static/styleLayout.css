@@ -14,8 +14,8 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 .error		 { color: red;}
 .Studyseshs 	 { float: left;}
 .session	 { float: left;}
-.map		 { position: absolute; top: 5px; left: 500px; width: 30%;}
-p		 { float: center; height: 30%; width: 30%; }
+.map		 { position: absolute; top: 5px; left: 500px; float: right; }
+p		 { height: 30%; width: 30%; }
 .login		 { text-align: left;  margin-bottom: 1em;  margin-top: 1em;}
 form {
      border: 5px solid black; text-align: left margin-bottom: 1em;  margin-top: 1em; 
