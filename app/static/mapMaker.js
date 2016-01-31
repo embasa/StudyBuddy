@@ -28,7 +28,11 @@ var markers = [
 		   postalCode:"95064"
 	       }
 	       ];
-
+// Clears listings
+function clear() {
+    listings = [ ];
+}
+//Initializes map 
 function initializeMap() {
     var mapOps = {
         center: new google.maps.LatLng(36.976349,-122.0292952),
@@ -42,13 +46,9 @@ function initializeMap() {
     google.maps.event.addListener(map, 'click', function() {
 	    infoWindow.close();
         });
-    
-    // DISPLAY THEM                                                                                                                                                                  
     displayMarkers();
 }
-google.maps.event.addDomListener(window, 'load', initializeMap);
-
-
+//Displays the currently active study sessions, aka listings.
 function displayMarkers(){
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i< markers.length; i++){
@@ -62,7 +62,7 @@ function displayMarkers(){
     }
     map.fitBounds(bounds);
 }
-
+//Creates an individual marker object(inherts some properties of listing)
 function createMarker(latlng, name, add1, add2, pCode){
     var marker = new google.maps.Marker({
 	    map: map,
@@ -80,5 +80,13 @@ function createMarker(latlng, name, add1, add2, pCode){
 	    infoWindow.setContent(iwContent);
 	    infoWindow.open(map, marker); // open in map at marker loc
 	});
+}
+//All script calls go here.//
+//if c ==0 is passed, clear listings!
+//This is the normal running procedure, posts for all sessions.
+if(c ==0){
+    clear();
+}else{
+    google.maps.event.addDomListener(window, 'load', initializeMap);
 }
 }
