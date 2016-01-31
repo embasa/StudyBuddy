@@ -28,8 +28,10 @@ class Listings(db.Model):
     title = db.Column(db.String(60), index=True, unique=True)
     host = db.Column(db.String(60), index=True, unique=True)
     participants = db.Column(db.String(200), index=True, unique=True)
+    latitude = db.Column(db.Integer, index=True,unique=False)
+    longitude = db.Column(db.Integer, index=True,unique=False)
 
-    def __init__(self, description, location, section, start_time, stop_time, subject, title,host,participants):
+    def __init__(self, description, location, section, start_time, stop_time, subject, title,host,participants,latitude,longitude):
         self.description = description
         self.location = location
         self.section = section
@@ -39,6 +41,8 @@ class Listings(db.Model):
         self.title = title
         self.host = host
         self.participants = participants
+        self.latitude = latitude
+        self.longitude = longitude
 
     def __repr__(self):
         description = 'Description: %r' % str(self.description)
@@ -48,13 +52,16 @@ class Listings(db.Model):
         stop_time = 'Stop Time: %r' % str(self.stop_time)
         subject = 'Subject: %r' % str(self.subject)
         title = 'Title: %r' % str(self.title)
-        host = 'Host: %r' % str(self.title)
-        participants = 'Participants: %r' % str(self.title)
+        host = 'Host: %r' % str(self.host)
+        participants = 'Participants: %r' % str(self.participants)
+        latitude = 'latitude: %r' % str(self.latitude)
+        longitude = 'longitude: %r' % str(self.longitude)
         return str(title + ' ' + location + '\n'
                 + subject + ' ' + section + '\n'
                 + start_time + ' ' + stop_time + '\n'
                 + description + ' ' + host + '\n'
-                + participants)
+                + participants + ' ' + latitude + '\n'
+                + longitude)
                
 class ActiveSessions(db.Model):
     __tablename__ = 'ActiveSessions'
