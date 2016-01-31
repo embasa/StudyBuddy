@@ -20,12 +20,12 @@ def index():
     print('CHANGE')
     return redirect(url_for('login'))
 ##################--- AJAX TESTING SCHEME ---############  
-@app.route('/ajax'){
-def blah():
+@app.route('/ajax')
+def ajax():
     return render_template("ajax.html")
 
 @app.route('/_add_numbers')
-def add_numbers():
+def _add_numbers():
     a = request.args.get('a', 0, type=int)
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
