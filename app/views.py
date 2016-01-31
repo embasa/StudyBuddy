@@ -39,17 +39,13 @@ def add_listing():
         data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
                                          request.form['start_time'], request.form['stop_time'], request.form['subject'],
                                          request.form['title'], request.form['host'], request.form['participants'])
-        if data == 'session exists':
-             error = 'You already have an active session with this title.'
+        if data == db_manager.sessionError:
+            error = 'You already have an active session with this title.'
+            return render_template('add_listing.html',title='Create Session',form=None)
         else:
-            return redirect(url_for('landing'))
-
-
-    form = AddListingForm()
-    if form.validate_on_submit():
-        flash('Login requested in order to create a new session!')
-        return redirect('/login')
-    return render_template('add_listing.html',title='Create Session',form=form)
+            return redirect(url_for('landing'),blah='moooness')
+    else:
+        return render_template('add_listing.html',title='Create Session',form=None)
 
 # Frank created this method as a placeholder to actually create the session.
 @app.route('/after_add_listing', methods=['GET', 'POST'])
@@ -142,6 +138,3 @@ def register():
 def profile():
     return render_template("profileBEST.html")
 
-@app.route('/c/<username>')
-def chicken(username):
-    return 'User %s' % username
