@@ -29,9 +29,19 @@ def add_listing():
     return render_template('add_listing.html',title='Create Session',form=form)
 
 # Frank created this method as a placeholder to actually create the session.
+@app.route('/after_add_listing', methods=['GET', 'POST'])
 def after_add_listing():
-    pass
-    # insert code here that will create a new session
+    error = None
+    if request.method == 'POST':
+        data = db_manager.create_session(request.form[description], request.form[location], request.form[section], 
+                                         request.form[start_time], requwst.form[stop_time], request.form[subject], 
+                                         request.form[title], request.form[host], request.form[participants])
+        if data == 'session exists':
+             error = 'You already have an active session with this title.'
+        else:
+            return redirect(url_for('landing'))
+
+
 
 @app.route('/inbox')
 def inbox():
@@ -72,7 +82,7 @@ def landing():
         name = session['username']
     else:
         return redirect(url_for('login'))
-    return render_template("landingV5.html",myName=name,listings=listings)
+    return render_template("landing.html",myName=name,listings=listings)
 
 @app.route('/login2')
 def login2():
