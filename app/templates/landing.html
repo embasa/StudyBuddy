@@ -9,10 +9,10 @@
   <body>
     {% for listing in listings %}
       <div class ="box-blue">
-        {{listing.title}} - {{listing.location}}
-        {{listing.subject}} - {{listing.section}}
-        {{listing.start_time}} - {{listing.stop_time}}
-        {{listing.description}}
+        <p>{{listing.title}} - {{listing.location}}</p>
+        <p>{{listing.subject}} - {{listing.section}}</p>
+        <p>{{listing.start_time}} - {{listing.stop_time}}</p>
+        <p>{{listing.description}}</p>
       </div>
     {% endfor %}
   </body>
