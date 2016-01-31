@@ -18,6 +18,10 @@ def index():
     print('CHANGE')
     return redirect(url_for('login'))
 
+@app.route('/add_listing')
+def add_listing():
+    return render_template('add_listing.html')
+
 @app.route('/inbox')
 def inbox():
     user = {'nickname': 'Miguel'}  # fake user
