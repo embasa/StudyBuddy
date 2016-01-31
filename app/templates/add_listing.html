@@ -1,13 +1,38 @@
 <!-- extend from base layout -->
 {% extends "layout.html" %}
 
-{% block content %}
+{% block body %}
   <h1>Create a New Session</h1>
-  <form> action="" method="post">
+   <form action="" method="post">
       {{ form.hidden_tag() }}
       <p>
-          Please give your study session a name:<br>
+          Please give your session a name:<br>
           {{ form.title }}
+      </p>
+      <p>
+          Please enter the location of your session:<br>
+          {{ form.location }}
+      </p>
+      <p>
+          Please enter the subject you are working on:<br>
+          {{ form.subject }}
+      </p>
+      <p>
+          Please enter the class you are working on:<br>
+          {{ form.section }}
+      </p>
+      <p>
+          Please enter the time your session will start:<br>
+          {{ form.start_time }}
+      </p>
+      <p>
+          Please enter the time your session will end:<br>
+          {{ form.stop_time }}
+      </p>
+      <p>
+          Please enter a description about your session
+          (what is the purpose or what are you trying to accomplish):<br>
+          {{ form.description }}
       </p>
       <p><input type="submit" value="Create Session"></p>
   </form>
