@@ -56,6 +56,21 @@ class Listings(db.Model):
                 + description + ' ' + host + '\n'
                 + participants)
                
+class ActiveSessions(db.Model):
+    participant = db.Column(db.String(64), index=True, unique=False)
+    title = db.Column(db.String(64), index=True, unique=False)
+    host =  db.Column(db.String(64), index=True, unique=False)
+
+    def __init__(self,participant,title,host):
+        self.participant = participant
+        self.title = title
+        self.host = host
+
+    def __repr__(self):
+        participant = '<Participant: %r >' % (self.participant)
+        title = 'title: %r >' % (self.title)
+        host = 'host: %r >' % (self.host)
+        return participant + ' ' + title + ' ' + host
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
