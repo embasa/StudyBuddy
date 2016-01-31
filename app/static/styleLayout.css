@@ -9,8 +9,8 @@ body 		{  width: 100%; height: 100%; padding: 0; margin: 0;}
 .sbheader	  { font-family: "Arial"; sans-serif; color: gray;}
 .menu	         { text-align: center; font-size: 0.8em; padding: 0.3em; margin-bottom: 1em;background-color:#d8ecf7;}
 .flash	  { background: #f0d6d6; padding: 0.5em;}
-.Studyseshs {align: right; color: purple;}
-header, nav	  {display: block;}
+.Studyseshs {float: right; color: purple;}
+
 
 /* Colored Content Boxes */
 .box-blue,
@@ -22,19 +22,19 @@ header, nav	  {display: block;}
 	    overflow:hidden;
 	    padding:20px;
 	    -webkit-border-radius: 10px;
-            border-radius:10px; max-width:300px; align: right;}
+            border-radius:10px; max-width:300px;}
 .box-blue {background-color:#d8ecf7;
-	  border:1px solid #afcde3;max-width:300px; align: right;}
+	  border:1px solid #afcde3;max-width:300px;}
 .box-gray {background-color:#e2e2e2;
-	  border:1px solid #bdbdbd;max-width:300px; align: right;}
+	  border:1px solid #bdbdbd;max-width:300px;}
 .box-green {background-color:#d9edc2;
-	   border:1px solid #b2ce96;max-width:300px; align: right;}
+	   border:1px solid #b2ce96;max-width:300px;}
 
 .box-grey {background-color:#F5F5F5;
-	  border:1px solid #DDDDDD;max-width:300px; align: right;}
+	  border:1px solid #DDDDDD;max-width:300px;}
 
 .box-red {background-color:#f9dbdb;
-	 border:1px solid #e9b3b3;max-width:300px; align: right;}
+	 border:1px solid #e9b3b3;max-width:300px;}
 
-.box-yellow { background-color:#fef5c4; border:1px solid #fadf98; max-width:300px; align: right;}
+.box-yellow { background-color:#fef5c4; border:1px solid #fadf98; max-width:300px; align:}
 
