@@ -25,12 +25,12 @@ def create_user(email, pwhash, username):
     db.session.commit()
     return True
     
-def create_session(description, location, section, start_time, stop_time, subject, title, host, participants):
+def create_session(description, location, section, start_time, stop_time, subject, title, host, participants,latitude,longitude):
     sessions = models.Listings.query.all()
     for session in sessions:
         if session.host == host and session.title == title:
             return sessionError
-    session = models.Listings(description, location, section, start_time, stop_time, subject, title, host, participants)
+    session = models.Listings(description, location, section, start_time, stop_time, subject, title, host, participants,latitude,longitude)
     db.session.add(session)
     db.session.commit()
     return True
