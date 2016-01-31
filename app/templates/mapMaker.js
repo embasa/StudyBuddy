@@ -28,7 +28,7 @@ var markers = [
 	       }
 	       ];
 
-function initiliazeMap() {
+function initializeMap() {
     var mapOps = {
         center: new google.maps.LatLng(36.976349,-122.0292952),
         zoom: 8,
