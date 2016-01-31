@@ -20,6 +20,9 @@ def index():
     print('CHANGE')
     return redirect(url_for('login'))
 
+@app.route('/ajax'){
+def blah():
+    return render_template("ajax.html")
 # Frank created this view to generate a page where users can create a session.
 @app.route('/add_listing', methods=['GET', 'POST'])
 def add_listing():
