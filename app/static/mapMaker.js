@@ -1,4 +1,5 @@
 // This java script file creates a google map with markers
+function initialize(){
 var map;
 var infoWindow;
 var markers = [
@@ -79,4 +80,5 @@ function createMarker(latlng, name, add1, add2, pCode){
 	    infoWindow.setContent(iwContent);
 	    infoWindow.open(map, marker); // open in map at marker loc
 	});
+}
 }
