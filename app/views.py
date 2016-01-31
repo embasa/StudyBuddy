@@ -24,7 +24,7 @@ def index():
 def add_listing():
     if request.method == 'POST':
         data = db_manager.create_session(request.form[description], request.form[location], request.form[section],
-                                         request.form[start_time], requwst.form[stop_time], request.form[subject],
+                                         request.form[start_time], request.form[stop_time], request.form[subject],
                                          request.form[title], request.form[host], request.form[participants])
         if data == 'session exists':
              error = 'You already have an active session with this title.'
@@ -98,15 +98,17 @@ def landing():
 def login2():
     return render_template("login2.html")
 
-@app.route('/login', methods =['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] !='admin':
-            error = 'Invalid Credentials. Please try again.'
-        else:
-            session['username'] = request.form['username']
+        username = request.form['username']
+        password = request.form['password']
+        if db_manager.user_validation(password,username):
+            session['username'] = username
             return redirect(url_for('landing'))
+        else:
+            error = 'Invalid Credentials. Please try again.'
+            return render_template("login3.html", error=error)
     return render_template("login3.html", error=error)
 
 @app.route('/register')
