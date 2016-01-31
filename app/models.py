@@ -14,22 +14,22 @@ class Logins(db.Model):
 
 class Listings(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    description = str(db.Column(db.String(60), index=True, unique=True))
-    location = str(db.Column(db.String(60), index=True, unique=True))
-    section = str(db.Column(db.String(60), index=True, unique=True))
-    start_time = str(db.Column(db.String(60), index=True, unique=True))
-    stop_time = str(db.Column(db.String(60), index=True, unique=True))
-    subject = str(db.Column(db.String(60), index=True, unique=True))
-    title = str(db.Column(db.String(60), index=True, unique=True))
+    description = db.Column(db.String(60), index=True, unique=True)
+    location = db.Column(db.String(60), index=True, unique=True)
+    section = db.Column(db.String(60), index=True, unique=True)
+    start_time = db.Column(db.String(60), index=True, unique=True)
+    stop_time = db.Column(db.String(60), index=True, unique=True)
+    subject = db.Column(db.String(60), index=True, unique=True)
+    title = db.Column(db.String(60), index=True, unique=True)
 
     def __repr__(self):
-        description = 'Description: %r' % (self.description)
-        location = 'Location: %r' % (self.location)
-        section = 'Section: %r' % (self.section)
-        start_time = 'Start Time: %r' % (self.start_time)
-        stop_time = 'Stop Time: %r' % (self.stop_time)
-        subject = 'Subject: %r' % (self.subject)
-        title = 'Title: %r' % (self.title)
+        description = 'Description: %r' % str(self.description)
+        location = 'Location: %r' % str(self.location)
+        section = 'Section: %r' % str(self.section)
+        start_time = 'Start Time: %r' % str(self.start_time)
+        stop_time = 'Stop Time: %r' % str(self.stop_time)
+        subject = 'Subject: %r' % str(self.subject)
+        title = 'Title: %r' % str(self.title)
         return str(title + ' ' + location + '\n'
                 + subject + ' ' + section + '\n'
                 + start_time + ' ' + stop_time + '\n'
