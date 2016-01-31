@@ -1,3 +1,4 @@
+import db_manager
 from flask import Flask, render_template, redirect, url_for, request,session,escape
 from app import app, models, db
 from .forms import AddListingForm
