@@ -23,9 +23,9 @@ def index():
 @app.route('/add_listing', methods=['GET', 'POST'])
 def add_listing():
     if request.method == 'POST':
-        data = db_manager.create_session(request.form[description], request.form[location], request.form[section],
-                                         request.form[start_time], request.form[stop_time], request.form[subject],
-                                         request.form[title], request.form[host], request.form[participants])
+        data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
+                                         request.form['start_time'], request.form['stop_time'], request.form['subject'],
+                                         request.form['title'], request.form['host'], request.form['participants'])
         if data == 'session exists':
              error = 'You already have an active session with this title.'
         else:
@@ -43,9 +43,9 @@ def add_listing():
 def after_add_listing():
     error = None
     if request.method == 'POST':
-        data = db_manager.create_session(request.form[description], request.form[location], request.form[section], 
-                                         request.form[start_time], requwst.form[stop_time], request.form[subject], 
-                                         request.form[title], request.form[host], request.form[participants])
+        data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
+                                         request.form['start_time'], request.form['stop_time'], request.form['subject'],
+                                         request.form['title'], request.form['host'], request.form['participants'])
         if data == 'session exists':
              error = 'You already have an active session with this title.'
         else:
