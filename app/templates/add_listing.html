@@ -3,37 +3,31 @@
 
 {% block body %}
   <h1>Create a New Session</h1>
-   <form action="" method="post">
-      {{ form.hidden_tag() }}
-      <p>
-          Please give your session a name:<br>
-          {{ form.title }}
-      </p>
-      <p>
-          Please enter the location of your session:<br>
-          {{ form.location }}
-      </p>
-      <p>
-          Please enter the subject you are working on:<br>
-          {{ form.subject }}
-      </p>
-      <p>
-          Please enter the class you are working on:<br>
-          {{ form.section }}
-      </p>
-      <p>
-          Please enter the time your session will start:<br>
-          {{ form.start_time }}
-      </p>
-      <p>
-          Please enter the time your session will end:<br>
-          {{ form.stop_time }}
-      </p>
-      <p>
-          Please enter a description about your session
-          (what is the purpose or what are you trying to accomplish):<br>
-          {{ form.description }}
-      </p>
-      <p><input type="submit" value="Create Session"></p>
-  </form>
+  <body class="centered-wrapper">
+    <div class="centered-stuff">
+      <form action="<url_for_add_listing>" method=posts>
+        <dl>
+          <dt>Please give your session a name:
+          <dd><input type=text name=title>
+          <dt>Please enter the location of your session:
+          <dd><input type=text name=location>
+          <dt>Please enter the subject you are working on:
+          <dd><input type=text name=subject>
+          <dt>Please enter the class you are working on:
+          <dd><input type=text name=subject>
+          <dt>Please enter the time your session will start:
+          <dd><input type=text name=start_time>
+          <dt>Please enter the time your session will end:
+          <dd><input type=text name=stop_time>
+          <dt>Please enter a description for your session:
+          <dd><input type=text name=description>
+          <dt>Please declare a host for your session:
+          <dd><input type=text name=host>
+          <dt>Please declare any participants in your session:
+          <dd><input type=text name=participants>
+          <dd><input type=submit id="add_listing_submit" value='Create Session'>
+        </dl>
+      </form>
+    </div>
+  </body>
 {% endblock %}
