@@ -30,7 +30,7 @@ class Listings(db.Model):
         stop_time = 'Stop Time: %r' % (self.stop_time)
         subject = 'Subject: %r' % (self.subject)
         title = 'Title: %r' % (self.title)
-        return (title + ' ' + location + '\n'
+        return str(title + ' ' + location + '\n'
                 + subject + ' ' + section + '\n'
                 + start_time + ' ' + stop_time + '\n'
                 + description)
