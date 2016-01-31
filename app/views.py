@@ -22,6 +22,16 @@ def index():
 # Frank created this view to generate a page where users can create a session.
 @app.route('/add_listing', methods=['GET', 'POST'])
 def add_listing():
+    if request.method == 'POST':
+        data = db_manager.create_session(request.form[description], request.form[location], request.form[section],
+                                         request.form[start_time], requwst.form[stop_time], request.form[subject],
+                                         request.form[title], request.form[host], request.form[participants])
+        if data == 'session exists':
+             error = 'You already have an active session with this title.'
+        else:
+            return redirect(url_for('landing'))
+
+
     form = AddListingForm()
     if form.validate_on_submit():
         flash('Login requested in order to create a new session!')
