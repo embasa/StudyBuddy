@@ -80,7 +80,7 @@ def register():
 
 @app.route('/profile')
 def profile():
-    return render_template("profile.html")
+    return render_template("profile2.html")
 
 @app.route('/c/<username>')
 def chicken(username):
