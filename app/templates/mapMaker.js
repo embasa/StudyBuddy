@@ -1,6 +1,6 @@
 // This java script file creates a google map with markers
 var map;
-var inforWindow;
+var infoWindow;
 var markers = [
 	       { 
 		   lat: 36.9740497,
