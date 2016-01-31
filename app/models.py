@@ -26,8 +26,10 @@ class Listings(db.Model):
     stop_time = db.Column(db.String(60), index=True, unique=True)
     subject = db.Column(db.String(60), index=True, unique=True)
     title = db.Column(db.String(60), index=True, unique=True)
+    host = db.Column(db.String(60), index=True, unique=True)
+    participants = db.Column(db.String(200), index=True, unique=True)
 
-    def __init__(self, description, location, section, start_time, stop_time, subject, title):
+    def __init__(self, description, location, section, start_time, stop_time, subject, title,host,participants):
         self.description = description
         self.location = location
         self.section = section
@@ -35,6 +37,8 @@ class Listings(db.Model):
         self.stop_time = stop_time
         self.subject = subject
         self.title = title
+        self.host = host
+        self.participants = participants
 
     def __repr__(self):
         description = 'Description: %r' % str(self.description)
@@ -44,10 +48,13 @@ class Listings(db.Model):
         stop_time = 'Stop Time: %r' % str(self.stop_time)
         subject = 'Subject: %r' % str(self.subject)
         title = 'Title: %r' % str(self.title)
+        host = 'Host: %r' % str(self.title)
+        participants = 'Participants: %r' % str(self.title)
         return str(title + ' ' + location + '\n'
                 + subject + ' ' + section + '\n'
                 + start_time + ' ' + stop_time + '\n'
-                + description)
+                + description + ' ' + host + '\n'
+                + participants)
                
 
 class User(db.Model):
