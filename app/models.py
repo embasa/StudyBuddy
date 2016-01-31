@@ -6,6 +6,11 @@ class Logins(db.Model):
     pwhash = db.Column(db.String(100), index=True, unique=True)
     username = db.Column(db.String(60), index=True, unique=True)
 
+    def __init__(self,email,pwhash,username):
+        self.email = email
+        self.pwhash = pwhash
+        self.username = username
+
     def __repr__(self):
         email = '<email: %r >' % (self.email)
         pwhash = 'pwhash: %r >' % (self.pwhash)
