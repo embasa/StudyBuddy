@@ -22,9 +22,9 @@ form {
     color: black;
 }
 .shadow {
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
+  -moz-form-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-form-shadow: 3px 3px 5px 6px #ccc;
+  form-shadow:         3px 3px 5px 6px #ccc;
 }
 a:hover{
     color: white;
