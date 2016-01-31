@@ -35,10 +35,12 @@ def _add_numbers():
 # Frank created this view to generate a page where users can create a session.
 @app.route('/add_listing', methods=['GET', 'POST'])
 def add_listing():
+    centerA = 36.985
+    centerB = -122.04
     if request.method == 'POST':
         data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
                                          request.form['start_time'], request.form['stop_time'], request.form['subject'],
-                                         request.form['title'], request.form['host'], request.form['participants'])
+                                         request.form['title'], request.form['host'], request.form['participants'],centerA,centerB)
         if data == db_manager.sessionError:
             error = 'You already have an active session with this title.'
             return render_template('add_listing.html',title='Create Session',form=None)
@@ -46,19 +48,6 @@ def add_listing():
             return redirect(url_for('landing'),blah='moooness')
     else:
         return render_template('add_listing.html',title='Create Session',form=None)
-
-# Frank created this method as a placeholder to actually create the session.  @app.route('/after_add_listing', methods=['GET', 'POST'])
-def after_add_listing():
-    error = None
-    if request.method == 'POST':
-        data = db_manager.create_session(request.form['description'], request.form['location'], request.form['section'],
-                                         request.form['start_time'], request.form['stop_time'], request.form['subject'],
-                                         request.form['title'], request.form['host'], request.form['participants'])
-        if data == 'session exists':
-             error = 'You already have an active session with this title.'
-        else:
-            return redirect(url_for('landing'))
-
 
 
 @app.route('/inbox')
@@ -101,11 +90,6 @@ def landing():
     else:
         return redirect(url_for('login'))
     return render_template("landing.html",myName=name,listings=listings)
-
-@app.route('/login2')
-def login2():
-    return render_template("login2.html")
-
 
 @app.route('/login',methods=['GET','POST'])
 def login():
