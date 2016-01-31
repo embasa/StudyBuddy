@@ -57,7 +57,7 @@ google.maps.event.addDomListener(window, 'load', initializeMap);
 //Displays the currently active study sessions, aka listings.
 function displayMarkers(){
     var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i< markers.length; i++){
+    for (var i = 0; i< listings.length; i++){
 	var latlng = new google.maps.LatLng(listings[i].lat, listings[i].lng);
 	var name = listings[i].name;
 	var add1 = listings[i].address1;
