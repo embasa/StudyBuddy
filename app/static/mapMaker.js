@@ -2,7 +2,7 @@
 //Here is a sample call, which adds a study session pin point
 //on the map at latude = args[0] and longitude = args[1]
 //intialize(36.9765546,-122.0323493,"Breakfast at?","The Abbey");
-function initialize(args){
+function initialize(listings2){
 var map;
 var infoWindow;
 var listings = [
