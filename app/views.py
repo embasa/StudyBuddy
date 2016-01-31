@@ -1,5 +1,5 @@
 import db_manager
-from flask import Flask, render_template, redirect, url_for, request,session,escape
+from flask import Flask, render_template, redirect, jsonify, url_for, request,session,escape
 from app import app, models, db
 from .forms import AddListingForm
 
@@ -19,6 +19,18 @@ def index():
         return redirect(url_for('landing'))
     print('CHANGE')
     return redirect(url_for('login'))
+##################--- AJAX TESTING SCHEME ---############  
+@app.route('/ajax'){
+def blah():
+    return render_template("ajax.html")
+
+@app.route('/_add_numbers')
+def add_numbers():
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a + b)
+
+################--- END OF TESTING SCHEME ---############  
 
 # Frank created this view to generate a page where users can create a session.
 @app.route('/add_listing', methods=['GET', 'POST'])
