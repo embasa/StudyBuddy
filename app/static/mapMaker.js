@@ -31,6 +31,7 @@ var listings = [
 		   postalCode:"95064"
 	       }
 	       ];
+//(36.9765546,-122.0323493,"Breakfast at?","The Abbey");
 // Clears listings
 function clear() {
     listings = [ ];
@@ -87,7 +88,8 @@ function createMarker(latlng, name, add1, add2, pCode){
 //All script calls go here.//
 //if c ==0 is passed, clear listings!
 //This is the normal running procedure, posts for all sessions.
-listings.push(args[0],args[1],args[2],args[3]);
+listings.push(args[0],args[1],args[2],args[3],"The Abbey","Santa Cruz");
+
 /*
   lat: 37.000353,
   lng: -122.0631443,
