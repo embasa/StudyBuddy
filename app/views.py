@@ -1,11 +1,22 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request,session,escape
 from app import app, models, db
 
+#idafsdalfasdfl;akjdsflj
+app.secret_key = 'hubbahubba'
 @app.route('/')
-
 @app.route('/index')
 def index():
-    return render_template("index.html")
+    error = None
+    for key in session:
+        print(key)
+    if 'username' in session:
+        # here we would want to verify that the user is in the databases
+        print('DO I GET HERE')
+        username = session['username']
+        session.pop('username',None)
+        return redirect(url_for('landing'))
+    print('CHANGE')
+    return redirect(url_for('login'))
 
 @app.route('/inbox')
 def inbox():
@@ -40,7 +51,12 @@ def inbox():
 @app.route('/landing')
 def landing():
     listings = models.Listings.query.all();
-    name=request.args['name']
+    name = 'hopey changy'
+    if 'username' in session:
+        #verify that it is valid username
+        name = session['username']
+    else:
+        return redirect(url_for('login'))
     return render_template("landing.html",myName=name)
 
 @app.route('/login2')
@@ -54,7 +70,8 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] !='admin':
             error = 'Invalid Credentials. Please try again.'
         else:
-            return redirect(url_for('landing',name=request.form['username']))
+            session['username'] = request.form['username']
+            return redirect(url_for('landing'))
     return render_template("login3.html", error=error)
 
 @app.route('/register')
