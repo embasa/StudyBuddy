@@ -98,8 +98,8 @@ function createMarker(latlng, name, add1, add2, pCode){
   address2: "UC Santa Cruz",
   postalCode:"95064"
 */
-//clear();
+//if args[0] ==0, clear();
 //}else{
-    google.maps.event.addDomListener(window, 'load', initializeMap);
+google.maps.event.addDomListener(window, 'load', initializeMap);
     //}
 }
