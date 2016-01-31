@@ -35,7 +35,7 @@ function initiliazeMap() {
         mapTypeId: 'roadmap',
     };
     
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOps);
+    map = new google.maps.Map(document.getElementById('map'), mapOps);
     infoWindow = new google.maps.InfoWindow();
     // Closes infoWin after a click on map
     google.maps.event.addListener(map, 'click', function() {
