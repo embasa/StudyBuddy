@@ -26,11 +26,10 @@
 </div>
 
 <div id="left">
-    <!--<div>
-    {% for item in listings %}
-        <span onclick=test_func({{ item|safe }});>blah{{ item }}</span>
+     {% for item in listings %}
+        <span onclick=test_func( {{ item|safe }} );> {{ item }}</span>
     {% endfor %}
-    </div>-->
+    </div>-
   <div class="sesssion">
     {% for listing in listings %}
     <div class ="box-blue">
