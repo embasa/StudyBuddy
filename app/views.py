@@ -115,10 +115,10 @@ def register():
         data = db_manager.create_user(email, password, username)
         if data == db_manager.usernameError:
             error = 'This username is taken.'
-            return render_template('register.html')
+            return render_template('register.html', error = error)
         elif data == db_manager.emailError:
             error = 'This email is taken.'
-            return render_template('register.html')
+            return render_template('register.html', error = error)
         else:
             return render_template('login3.html')
 
