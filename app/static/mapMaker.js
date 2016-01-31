@@ -42,8 +42,7 @@ function initializeMap() {
         center: new google.maps.LatLng(36.976349,-122.0292952),
         zoom: 8,
         mapTypeId: 'roadmap',
-    };
-    
+    };   
     map = new google.maps.Map(document.getElementById('map'), mapOps);
     infoWindow = new google.maps.InfoWindow();
     // Closes infoWin after a click on map
@@ -52,10 +51,13 @@ function initializeMap() {
         });
     displayMarkers();
 }
+//Initializes gooel api/maps. must be here!
+google.maps.event.addDomListener(window, 'load', initializeMap);
+
 //Displays the currently active study sessions, aka listings.
 function displayMarkers(){
     var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i< markers.length; i++){
+    for (var i = 0; i< listings.length; i++){
 	var latlng = new google.maps.LatLng(listings[i].lat, listings[i].lng);
 	var name = listings[i].name;
 	var add1 = listings[i].address1;
@@ -100,6 +102,5 @@ function createMarker(latlng, name, add1, add2, pCode){
 */
 //if args[0] ==0, clear();
 //}else{
-google.maps.event.addDomListener(window, 'load', initializeMap);
     //}
 }

@@ -14,6 +14,7 @@ body 		{  width: 100%; height: 100%; padding: 0.5em;
 .error		 { color: red;}
 .Studyseshs 	 { float: left;}
 /*#map		 { height: 100%; width: 100%;}*/
+p		 {float: right; height: 30%; width: 30%; }
 .login		 { text-align: left;  margin-bottom: 1em;  margin-top: 1em;}
 form {
      border: 5px solid black; text-align: left margin-bottom: 1em;  margin-top: 1em; 
