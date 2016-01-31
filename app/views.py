@@ -114,9 +114,17 @@ def login():
             return render_template("login3.html", error=error)
     return render_template("login3.html", error=error)
 
-@app.route('/register')
+@app.route('/register', methods=['GET','POST'])
 def register():
-    return render_template("register.html")
+    if request.method == 'POST':
+        email = request.form['email']
+        username = request.form['username']
+        password = request.form['password']
+        if db_manager.create_user(email, password, username) == True:
+            return redirect(url_for('login'))
+        else:
+            return render_template('register.html')
+    return render_template('register.html')
 
 @app.route('/profile')
 def profile():
