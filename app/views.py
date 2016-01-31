@@ -95,7 +95,7 @@ def register():
 
 @app.route('/profile')
 def profile():
-    return render_template("profile2.html")
+    return render_template("profileBEST.html")
 
 @app.route('/c/<username>')
 def chicken(username):
