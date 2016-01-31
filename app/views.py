@@ -47,8 +47,7 @@ def add_listing():
     else:
         return render_template('add_listing.html',title='Create Session',form=None)
 
-# Frank created this method as a placeholder to actually create the session.
-@app.route('/after_add_listing', methods=['GET', 'POST'])
+# Frank created this method as a placeholder to actually create the session.  @app.route('/after_add_listing', methods=['GET', 'POST'])
 def after_add_listing():
     error = None
     if request.method == 'POST':
