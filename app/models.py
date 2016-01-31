@@ -56,11 +56,12 @@ class Listings(db.Model):
                 + description + ' ' + host + '\n'
                 + participants)
                
+'''
 class ActiveSessions(db.Model):
     __tablename__ = 'ActiveSessions'
-    participant = db.Column(db.String(64), index=True, unique=False)
-    title = db.Column(db.String(64), index=True, unique=False)
-    host =  db.Column(db.String(64), index=True, unique=False)
+    participant = db.Column(db.String(60), index=True, unique=False)
+    title = db.Column(db.String(60), index=True, unique=False)
+    host =  db.Column(db.String(60), index=True, unique=False)
 
     def __init__(self,participant,title,host):
         self.participant = participant
@@ -72,6 +73,7 @@ class ActiveSessions(db.Model):
         title = 'title: %r >' % (self.title)
         host = 'host: %r >' % (self.host)
         return participant + ' ' + title + ' ' + host
+        '''
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
