@@ -18,9 +18,11 @@ def index():
     print('CHANGE')
     return redirect(url_for('login'))
 
+# this is franks add listing form!
 @app.route('/add_listing')
 def add_listing():
-    return render_template('add_listing.html')
+    form = AddListingForm()
+    return render_template('add_listing.html',title='Create Session',form=form)
 
 @app.route('/inbox')
 def inbox():
