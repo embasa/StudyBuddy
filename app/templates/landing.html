@@ -8,7 +8,12 @@
 <h3>Current Study Sessions</h3>
   <body>
     {% for listing in listings %}
-      <div class ="box-blue">{{listing.title}}</div>
+      <div class ="box-blue">
+        {{listing.title}} - {{listing.location}}
+        {{listing.subject}} - {{listing.section}}
+        {{listing.start_time}} - {{listing.stop_time}}
+        {{listing.description}}
+      </div>
     {% endfor %}
   </body>
 </div>
