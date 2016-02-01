@@ -32,13 +32,13 @@ a:hover{
 }
 #left{
 float:left;
-width:300px;
-height:500px;
+width:150px;
+height:400px;
 }
 #right{
-float:right: 
-400px;
-height:500px;
+float:right;
+width: 450px;
+height:400px;
 }
 /* Colored Content Boxes */
 .box-blue,
@@ -46,7 +46,7 @@ height:500px;
 .box-green,
 .box-grey,
 .box-red,
-.box-yellow {margin:0 0 25px;
+.box-yellow {margin:0 0 2px;
 	    overflow:hidden;
 	    padding:20px;
 	    -webkit-border-radius: 10px;
