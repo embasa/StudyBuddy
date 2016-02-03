@@ -84,11 +84,14 @@ def inbox():
 def landing():
     listings = models.Listings.query.all();
     name = 'hopey changy'
-    if 'username' in session:
-        #verify that it is valid username
-        name = session['username']
-    else:
-        return redirect(url_for('login'))
+    lst = []
+    for listing in listings:
+        #dic = listing.getListingFields()
+        array = listing.stringArray()
+        #print(array)
+        [lst.append(string) for string in array ]
+
+    print(lst)
     return render_template("landingI.html",myName=name,listings=listings)
 
 @app.route('/login',methods=['GET','POST'])
