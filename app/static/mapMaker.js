@@ -2,35 +2,23 @@
 //Here is a sample call, which adds a study session pin point
 //on the map at latude = args[0] and longitude = args[1]
 //intialize(36.9765546,-122.0323493,"Breakfast at?","The Abbey");
-function initialize(listings2){
+function initializeMyShit(listings2){
 var map;
 var infoWindow;
-var listings = [
-	       { 
-		   lat: 36.9740497,
-		   lng: -122.0260089,
-		   name: "study sesh1",
-		   address1: "Santa Cruz Coffee Roasters",
-		   address2: "Pac Ave",
+var testArray = [];
+var adjustment = 0.02;
+for(j = 0;j<listings2.length;j+=3){
+    testArray.push({
+		   lat: 36.9740497 + adjustment,
+		   lng: -122.0260089 + adjustment,
+		   name: listings2[j],
+		   address1: listings2[j+1],
+		   address2: listings2[j+2],
 		   postalCode:"95060"
-	       },
-	       {
-		   lat: 36.976349,
-		   lng: -122.0292952,
-		   name: "study sesh2",
-		   address1: "Lulu Carpenters",
-		   address2: "Pac Ave",
-		   postalCode:"95060"
-	       },
-	       {      
-		   lat: 37.000353,
-		   lng: -122.0631443,
-		   name: "study sesh3",
-		   address1: "Jack Baskin",
-		   address2: "UC Santa Cruz",
-		   postalCode:"95064"
-	       }
-	       ];
+    });
+    adjustment += 0.02;
+}
+var listings = testArray;
 //(36.9765546,-122.0323493,"Breakfast at?","The Abbey");
 // Clears listings
 function clear() {
@@ -87,6 +75,7 @@ function createMarker(latlng, name, add1, add2, pCode){
 	    infoWindow.open(map, marker); // open in map at marker loc
 	});
 }
+
 //All script calls go here.//
 //if c ==0 is passed, clear listings!
 //This is the normal running procedure, posts for all sessions.

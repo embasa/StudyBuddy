@@ -46,12 +46,12 @@ class Listings(db.Model):
 
     def __repr__(self):
         description = 'Description: %r' % str(self.description)
-        location = 'Location: %r' % str(self.location)
+        location = '%s' % str(self.location)
         section = 'Section: %r' % str(self.section)
         start_time = 'Start Time: %r' % str(self.start_time)
         stop_time = 'Stop Time: %r' % str(self.stop_time)
-        subject = 'Subject: %r' % str(self.subject)
-        title = 'Title: %r' % str(self.title)
+        subject = '%s' % str(self.subject)
+        title = '%s' % str(self.title)
         host = 'Host: %r' % str(self.host)
         participants = 'Participants: %r' % str(self.participants)
         latitude = 'latitude: %r' % str(self.latitude)
@@ -62,6 +62,12 @@ class Listings(db.Model):
                 + description + ' ' + host + '\n'
                 + participants + ' ' + latitude + '\n'
                 + longitude)
+    
+    def stringArray(self):
+        location = '%s' % str(self.location)
+        subject = '%s' % str(self.subject)
+        title = '%s' % str(self.title)
+        return [title,subject,location]
                
 class ActiveSessions(db.Model):
     __tablename__ = 'ActiveSessions'

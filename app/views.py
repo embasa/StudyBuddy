@@ -1,4 +1,5 @@
 import db_manager
+from geoip import geolite2,IPInfo
 from flask import Flask, render_template, redirect, jsonify, url_for, request,session,escape
 from app import app, models, db
 from .forms import AddListingForm
@@ -82,17 +83,20 @@ def inbox():
 
 @app.route('/landing')
 def landing():
+    testIP = '130.65.254.12'
     listings = models.Listings.query.all();
     name = 'hopey changy'
     lst = []
     for listing in listings:
-        #dic = listing.getListingFields()
         array = listing.stringArray()
-        #print(array)
         [lst.append(string) for string in array ]
 
     print(lst)
-    return render_template("landingI.html",myName=name,listings=listings)
+    match = geolite2.lookup(testIP)
+    print(type(match))
+    print(match.country)
+    return render_template("landing.html",myName=name,listings=lst)
+
 
 @app.route('/login',methods=['GET','POST'])
 def login():
@@ -130,5 +134,6 @@ def register():
 
 @app.route('/profile')
 def profile():
-    return render_template("profileBEST.html")
+    return jsonify({'ip':request.remote_addr}), 200
+    #return render_template("profileBEST.html")
 

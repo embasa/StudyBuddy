@@ -8,37 +8,22 @@
 </div>
 <body>
 <div id="right">
-<!--<script type="text/javascript">
-    function test_func(data) {
-                console.log(data);
-                    }
-    test_func({{ data|safe }})
-    </script>-->  
+    <!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>-->
 <script src="../static/mapMaker.js"></script>
-<script> initialize({{listings}});</script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=test_it" async defer>
+</script>
+
+<script>
+    function test_it(){
+        var anArray = {{listings|safe}};
+        window.alert(typeof anArray);
+        //window.alert(typeof arry);
+        initializeMyShit(anArray);
+    };
+</script>
 <div id="map" style="height: 500px; width:400px; float: right"></div>
 </div>
 <div id="left">
-  <!--  {% for item in listings %}
-        <span onclick=test_func( {{ item|safe }} );> {{ item }}</span>
-	{% endfor %}
-    </div>-->
-  <div class="sesssion">
-    {% for listing in listings %}
-    <div class ="box-blue">
-      {{listing.location}} <br>
-      {{listing.title}}  <br>
-      {{listing.latitude}} <br>
-      {{listing.longitude}}
-    </div>
-    <div class ="box-green">
-      {{listing.location}} <br>
-      {{listing.title}}  <br>
-      {{listing.latitude}} <br>
-      {{listing.longitude}}
-    </div>
-    {% endfor %}
   </div>  
 </div>
 </body>

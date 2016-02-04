@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+<div>
+  <h2> {{ myName }}</h2>
+</div>
+<div class="Studyseshs">
+  <h3>Current Study Sessions</h3>
+</div>
+<body>
+<div id="right">
+    <!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer></script>-->
+<script src="../static/mapMaker.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoQzO6afbcJTkCV6_8LcapHtAnLn3b6_o&callback=initialize" async defer>
+
+    function testIt(val){
+        var arry = [];
+        
+        //window.alert(value[0]);
+        //window.alert(value.length);
+        for(i=0;i<val.length;i++){
+            arry.push(val[i]);
+        }
+
+        return arry;
+    };
+
+    initialize(['a','b','c']);
+
+</script>
+
+<script>
+    function test_it(val){
+        var arry = [];
+        //window.alert(value[0]);
+        //window.alert(value.length);
+        for(i=0;i<val.length;i+=3){
+            arry.push(val[i]);
+            window.alert(val[i]);
+        }
+        //window.alert(typeof arry);
+
+    };
+
+    function blah(val){
+        window.alert(typeof val);
+        window.alert(val[0]);
+    }
+
+    test_it({{listings|safe}});
+</script>
+<div id="map" style="height: 500px; width:400px; float: right"></div>
+</div>
+<div id="left">
+  </div>  
+</div>
+</body>
+<div>
+  <form action="" method="post">
+    <dl>
+      <dd><input type=submit id="add_listing_submit" value='Create Session'>
+    </dl>
+  </form>
+</div>
+</div>
+</html>
+{% endblock %}
